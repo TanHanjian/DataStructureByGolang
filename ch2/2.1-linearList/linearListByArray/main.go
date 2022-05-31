@@ -21,12 +21,14 @@ func (_ *LNode) MakeEmpty() *LNode {
 	}
 }
 
-func (node *LNode) Find(x ElementType) (i int) {
+func (node *LNode) Find(x ElementType) (i int, ok bool) {
+	ok = true
 	for i <= node.LAST && node.DATA[i] != x {
 		i++
 	}
 	if i > node.LAST {
 		i = -1
+		ok = false
 	}
 	return
 }

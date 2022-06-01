@@ -32,12 +32,13 @@ func (list *SNode) Push(x ElementType) (ok bool) {
 	return
 }
 
-func (list *SNode) Pop() (ok bool) {
+func (list *SNode) Pop() (ok bool, pop ElementType) {
 	ok = true
 	if list.Top == -1 {
 		ok = false
 		return
 	}
+	pop = list.Data[list.Top]
 	list.Data = list.Data[:len(list.Data)-1]
 	list.Top--
 	return

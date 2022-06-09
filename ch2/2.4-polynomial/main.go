@@ -56,7 +56,3 @@ func Add(p1, p2 *PolyNode) *PolyNode {
 	}
 	return sentry
 }
-
-func main() {
-
-}
